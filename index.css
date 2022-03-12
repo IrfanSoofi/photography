@@ -1,0 +1,334 @@
+﻿* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    display: grid;
+    width: 100vw;
+    height: 100vh;
+    grid-template-rows: 20% 70% 10%;
+    grid-gap: 0;
+}
+
+.img {
+    position: absolute;
+    display: block;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    animation-name: multiple-image-crossfade;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    transition: opacity 2s ease-in-out;
+    animation-duration: 16s;
+    z-index: -1;
+}
+
+img:nth-of-type(1) {
+    animation-delay: 12s;
+}
+
+img:nth-of-type(2) {
+    animation-delay: 8s;
+}
+
+img:nth-of-type(3) {
+    animation-delay: 4s;
+}
+
+img:nth-of-type(4) {
+    animation-delay: 0s;
+}
+
+@keyframes multiple-image-crossfade {
+    0% {
+        opacity: 1;
+    }
+
+    25% {
+        opacity: 0;
+    }
+
+    75% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+#nav {
+    grid-row-start: 1;
+    grid-row-end: 2;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+#navbar1 {
+    
+}
+    #navbar1 ul {
+        display: flex;
+    }
+    #navbar1 li {
+        list-style-type: none;
+    }
+
+        #navbar1 li a {
+            font-family: Almendra;
+            font-size: 1.4rem;
+            text-decoration: none;
+            color: rgb(255, 255, 255);
+            padding: 5px 20px;
+        }
+
+            #navbar1 li a:hover {
+                color: rgb(70, 0, 10);
+                background: rgb(255, 255, 255);
+            }
+
+#navbar2 {
+    
+}
+#navbar2 ul {
+    display: flex;
+}
+    #navbar2 li {
+        list-style-type: none;
+    }
+
+        #navbar2 li a {
+            font-family: Almendra;
+            font-size: 1.4rem;
+            text-decoration: none;
+            color: rgb(255, 255, 255);
+            padding: 5px 20px;
+        }
+
+            #navbar2 li a:hover {
+                color: rgb(70, 0, 10);
+                background: rgb(255, 255, 255);
+            }
+
+#header {
+    grid-row-start: 2;
+    grid-row-end: 3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#h1 {
+    display: flex;
+    justify-content: center;
+    font-family: Charm;
+    font-size: 4.8rem;
+    color: rgb(255, 255, 255);
+}
+
+#footer {
+    grid-row-start: 3;
+    grid-row-end: 4;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#foot {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+    #foot ul {
+        text-decoration: none;
+    }
+
+    #foot li {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        list-style: none;
+    }
+
+        #foot li a {
+            /* color: rgb(70, 0, 10); */
+            color: rgb(255, 255, 255);
+            font-size: 1.4rem;
+            text-decoration: none;
+            padding-right: 15px;
+            padding-left: 15px;
+        }
+
+#p {
+    display: flex;
+    justify-content: center;
+    font-family: "Segoe UI";
+    font-size: 1rem;
+    padding-top: 0.5rem;
+    margin-bottom: 1rem;
+    color: rgb(255, 255, 255);
+}
+#p a {
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    cursor: default;
+}
+
+@media only screen and (min-width: 320px) and (orientation: portrait) {
+    #nav {
+        grid-row-start: 1;
+        grid-row-end: 2;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    #navbar1 li {
+        display: flex;
+        justify-content: center;
+    }
+
+        #navbar1 li a {
+            padding: 5px 10px;
+            font-size: 1rem;
+        }
+
+    #navbar2 li {
+        display: flex;
+        justify-content: center;
+    }
+
+        #navbar2 li a {
+            padding: 5px 10px;
+            font-size: 1rem;
+        }
+
+    #header {
+        grid-row-start: 2;
+        grid-row-end: 3;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    #h1 {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 2.4rem;
+    }
+
+    #footer {
+        grid-row-start: 3;
+        grid-row-end: 4;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    #foot li {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        padding: 0 15 0 15;
+    }
+
+        #foot li a {
+            color: rgb(255, 255, 255);
+            font-size: 1.2rem;
+            text-decoration: none;
+            padding-right: 15px;
+            padding-left: 15px;
+        }
+
+    #p {
+        display: flex;
+        font-size: 0.8rem;
+        margin-bottom: 1rem;
+    }
+}
+
+@media only screen and (max-width: 768px) and (orientation: landscape) {
+    #nav {
+        grid-row-start: 1;
+        grid-row-end: 2;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    #navbar1 li {
+        display: flex;
+        justify-content: center;
+    }
+
+        #navbar1 li a {
+            padding: 5px 10px;
+            font-size: 1.2rem;
+        }
+
+    #navbar2 li {
+        display: flex;
+        justify-content: center;
+    }
+
+        #navbar2 li a {
+            padding: 5px 10px;
+            font-size: 1.2rem;
+        }
+
+    #header {
+        grid-row-start: 2;
+        grid-row-end: 3;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    #h1 {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 2.4rem;
+    }
+
+    #footer {
+        grid-row-start: 3;
+        grid-row-end: 4;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    #foot li {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        padding: 0 15 0 15;
+    }
+
+        #foot li a {
+            color: rgb(255, 255, 255);
+            font-size: 1.4rem;
+            text-decoration: none;
+            padding-right: 15px;
+            padding-left: 15px;
+        }
+
+    #p {
+        display: flex;
+        font-size: 0.8rem;
+        margin-bottom: 2rem;
+    }
+}

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="o.css" />
+    <title>Kay A. Photography</title>
+    <link rel="icon" href="../favicon.ico" type="image/ico" />
+  </head>
+  <body>
+    <div class="container">
+      <div>
+        <a id="ex-cross" href="../objects.html"> x </a>
+      </div>
+
+      <div class="slide">
+        <p align="center">
+          <img
+            src="../objects/Objects (8).jpg"
+            class="small"
+            alt="Image number 8 in objects folder"
+            onclick="toggleImage()"
+          />
+        </p>
+      </div>
+
+      <div>
+        <a href="o7.html"
+          ><p class="slider-arrow center_y" id="arrow-prev">&#10094;</p></a
+        >
+        <a href="o9.html"
+          ><p class="slider-arrow center_y" id="arrow-next">&#10095;</p></a
+        >
+      </div>
+    </div>
+    <script>
+      function toggleImage() {
+        var images = document.getElementsByTagName("img");
+        for (i = 0; i < images.length; i++) {
+          if (images[i].className == "small") {
+            images[i].className = "zoom";
+          } else {
+            images[i].className = "small";
+          }
+        }
+      }
+    </script>
+  </body>
+</html>
